@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState  } from "react";
+import { useRef } from "react";
 import Grocerylogo from "../images/Grocerylogo.png";
 import menubanner from "../images/menu-banner.jpg";
 import productimage1 from '../images/product-img-1.jpg'
@@ -7,15 +8,28 @@ import productimage3 from '../images/product-img-3.jpg'
 import productimage4 from '../images/product-img-4.jpg'
 import productimage5 from '../images/product-img-5.jpg'
 import { Link } from "react-router-dom";
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+
+
 
 const Header = () => {
 
 
   const [isOpen, setIsOpen] = useState(false);
 
+
+
   const handleClick = () => {
     setIsOpen(!isOpen);
   };
+
+  // const navbarCollapseRef = useRef(null);
+
+ // Function to collapse the navbar when "Shop" is clicked
+ const handleShopClick = () => {
+  setIsOpen(false); // Close the menu when clicking "Shop"
+};
+
 
   return (
     <div>
@@ -224,14 +238,9 @@ const Header = () => {
           </div>
         </div>
       </>
-      <nav className="navbar navbar-expand-lg navbar-light sticky-top">
+      <nav className="navbar navbar-expand-lg navbar-light sticky-top ">
         <div className="container">
           <Link className="navbar-brand" to="/Grocery-react/">
-            {/* <img
-              src={Grocerylogo}
-              style={{ width: 200, marginBottom: 10, marginLeft: "-15px" }}
-              alt="eCommerce HTML Template"
-            /> */}
             <h2>Shopfyns</h2>
           </Link>
           <input
@@ -239,27 +248,35 @@ const Header = () => {
             list="datalistOptions"
             id="exampleDataList"
             placeholder="Type to search..."
-            fdprocessedid="9icrif"
             style={{ width: "35%" }}
           />
 
           <button
             className="navbar-toggler"
             type="button"
-            data-toggle="collapse"
-            data-target="#mobile_nav"
             aria-controls="mobile_nav"
-            aria-expanded="false"
+            aria-expanded={isOpen} // bind to state
             aria-label="Toggle navigation"
+            onClick={handleClick} // toggle on click
+            // data-toggle="collapse"
+            // data-target="#mobile_nav"
+            // aria-controls="mobile_nav"
+            // aria-expanded="false"
+            // aria-label="Toggle navigation"
+            // onClick={handleClick}
           >
-            <div className={`containerr ${isOpen ? 'change' : ''}`} onClick={handleClick}>
+            <div className={`containerr ${isOpen ? 'change' : ''}`}
+            //  onClick={handleClick}
+             >
               <div className="bar1"></div>
               <div className="bar2"></div>
               <div className="bar3"></div>
             </div>
       </button>
 
-      <div className="collapse navbar-collapse" id="mobile_nav">
+      <div className={`collapse navbar-collapse ${isOpen ? 'show' : ''}`} id="mobile_nav">
+  {/* Your nav items */}
+
         <ul className="navbar-nav mr-auto mt-2 mt-lg-0 float-md-right"></ul>
         <ul className="navbar-nav navbar-light">
           <li className="nav-item">
@@ -273,25 +290,6 @@ const Header = () => {
                 aria-haspopup="true"
                 aria-expanded="false"
               >
-                <span class="me-1">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="1.2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="feather feather-grid"
-                  >
-                    <rect x="3" y="3" width="7" height="7"></rect>
-                    <rect x="14" y="3" width="7" height="7"></rect>
-                    <rect x="14" y="14" width="7" height="7"></rect>
-                    <rect x="3" y="14" width="7" height="7"></rect>
-                  </svg>
-                </span>{" "}
                 All Departments
               </Link>
               <div
@@ -323,7 +321,11 @@ const Header = () => {
             </li>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to="/Grocery-react/">
+            <Link className="nav-link" 
+            to="/Grocery-react/"
+            onClick={handleShopClick}
+            >
+            
               Home
             </Link>
           </li>
@@ -336,6 +338,7 @@ const Header = () => {
               data-toggle="dropdown"
               aria-haspopup="true"
               aria-expanded="false"
+              onClick={handleShopClick}
             >
               About
             </Link>
@@ -346,54 +349,42 @@ const Header = () => {
               <Link class="dropdown-item" to="/Blog">
                 Blog
               </Link>
-              {/* <Link className="dropdown-item" to="pages/blog-single.html">
-                    Blog Single
-                  </Link> */}
               <Link className="dropdown-item" to="/BlogCategory">
                 Blog Category
               </Link>
               <Link className="dropdown-item" to="/AboutUs">
                 About us
               </Link>
-              {/* <Link className="dropdown-item" to="pages/404error.html">
-                    404 Error
-                  </Link> */}
               <Link className="dropdown-item" to="/Contact">
                 Contact
               </Link>
             </div>
           </li>
+         
 
-          <li className="nav-item dmenu dropdown">
+       
+
+         <li className="nav-item
+
+          ">
             <Link
-              className="nav-link dropdown-toggle"
-              to="#"
-              id="navbarDropdown"
-              role="button"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
+              className="nav-link  "
+              to="/Shop"
+              // id="navbarDropdown"
+              // role="button"
+              // data-toggle="collapse"
+              // aria-controls="mobile_nav"
+              // aria-haspopup="true"
+              // aria-expanded="true"
+              onClick={handleShopClick}
+              
             >
               Shop
             </Link>
-            <div
-              className="dropdown-menu sm-menu"
-              aria-labelledby="navbarDropdown"
-            >
-              <Link className="dropdown-item" to="/Shop">
-                Shop
-              </Link>
-              <Link className="dropdown-item" to="/ShopWishList">
-                Shop Wishlist
-              </Link>
-              <Link className="dropdown-item" to="/ShopCart">
-                Shop Cart
-              </Link>
-              <Link className="dropdown-item" to="/ShopCheckOut">
-                Shop Checkout
-              </Link>
-            </div>
           </li>
+
+
+
 
           <li className="nav-item dmenu dropdown">
             <Link
@@ -404,6 +395,7 @@ const Header = () => {
               data-toggle="dropdown"
               aria-haspopup="true"
               aria-expanded="false"
+              onClick={handleShopClick}
             >
               Stores
             </Link>
@@ -422,47 +414,6 @@ const Header = () => {
               </Link>
             </div>
           </li>
-          {/* <li className="nav-item dmenu dropdown">
-                <Link
-                  className="nav-link dropdown-toggle"
-                  to="#"
-                  id="navbarDropdown"
-                  role="button"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                >
-                  Pages
-                </Link>
-                <div
-                  className="dropdown-menu sm-menu"
-                  aria-labelledby="navbarDropdown"
-                >
-                  <Link class="dropdown-item" to="pages/blog.html">
-                    Blog
-                  </Link>
-                  <div>
-                    <Link className="dropdown-item" to="pages/blog-single.html">
-                      Blog Single
-                    </Link>
-                    <Link
-                      className="dropdown-item"
-                      to="pages/blog-category.html"
-                    >
-                      Blog Category
-                    </Link>
-                    <Link className="dropdown-item" to="pages/about.html">
-                      About us
-                    </Link>
-                    <Link className="dropdown-item" to="pages/404error.html">
-                      404 Error
-                    </Link>
-                    <Link className="dropdown-item" to="pages/contact.html">
-                      Contact
-                    </Link>
-                  </div>
-                </div>
-              </li> */}
 
           <li className="nav-item dropdown megamenu-li dmenu">
             <Link
@@ -472,6 +423,7 @@ const Header = () => {
               data-toggle="dropdown"
               aria-haspopup="true"
               aria-expanded="false"
+              onClick={handleShopClick}
             >
               All Services
             </Link>
@@ -580,7 +532,7 @@ const Header = () => {
                   </div>
                 </div>
 
-                {/* <div className="row"> */}
+              
                 <div className="col-sm-6 col-lg-3 border-right mb-4">
                   <div className="card border-0">
                     <img
@@ -604,7 +556,6 @@ const Header = () => {
                   </div>
                 </div>
               </div>
-              {/* </div> */}
             </div>
           </li>
 
@@ -617,6 +568,7 @@ const Header = () => {
               data-toggle="dropdown"
               aria-haspopup="true"
               aria-expanded="false"
+              onClick={handleShopClick}
             >
               Account
             </Link>
@@ -663,16 +615,10 @@ const Header = () => {
               </div>
             </div>
           </li>
-          {/* <li className="nav-item">
-                <Link className="nav-link" to="">
-                  Contact us
-                </Link>
-              </li> */}
+
         </ul>
       </div>
-      {/* <div className="col-md-2 col-xxl-1 text-end d-none d-lg-block">
-            
-          </div> */}
+
     </div>
       </nav >
   <>
@@ -846,7 +792,7 @@ const Header = () => {
                       </div>
                     </div>
                     <div className="col-2 text-end">
-                      <span className="fw-bold">$35.00</span>
+                      <span className="fw-bold">₹35.00</span>
                     </div>
                   </div>
                 </li>

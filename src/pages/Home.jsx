@@ -47,6 +47,7 @@ import slider1 from "../images/slider-2.jpg";
 import snackmunchies from "../images/snack-munchies.png";
 import teacoffeedrinks from "../images/tea-coffee-drinks.png";
 import ProductItem from "../ProductList/ProductItem";
+import StoreList from "./store/StoreList";
 // import { PulseLoader } from 'react-spinners';
 import { MagnifyingGlass } from "react-loader-spinner";
 const Home = () => {
@@ -779,8 +780,10 @@ const Home = () => {
                 </div>
               </section>
               {/* section */}
+              <StoreList />
             </>
             <>
+
               <section>
                 <div className="container ">
                   <div className="row">
