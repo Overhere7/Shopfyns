@@ -33,6 +33,7 @@ import MyAccountAddress from "./pages/Accounts/MyAccountAddress";
 import MyAccountForgetPassword from "./pages/Accounts/MyAccountForgetPassword";
 import MyAccountSignIn from "./pages/Accounts/MyAccountSignIn";
 import MyAccountSignUp from "./pages/Accounts/MyAccountSignUp";
+import PopularCategoriesPage from "./pages/PopularCategoryPage";
 const App = () => {
   return (
     <div>
@@ -42,11 +43,13 @@ const App = () => {
           <Route path="/Grocery-react/" element={<Home />} />
           {/* Shop pages */}
           <Route path="/Shop" element={<Shop />} />
+          <Route path="/Category" element={<PopularCategoriesPage />} />
           <Route path="/ShopGridCol3" element={<ShopGridCol3 />} />
           <Route path="/ShopListCol" element={<ShopListCol />} />
           <Route path="/ShopWishList" element={<ShopWishList />} />
           <Route path="/ShopCheckOut" element={<ShopCheckOut />} />
           <Route path="/ShopCart" element={<Shopfyns />} />
+
           {/* Store pages */}
           <Route path="/StoreList" element={<StoreList />} />
           <Route path="/SingleShop" element={<SingleShop />} />

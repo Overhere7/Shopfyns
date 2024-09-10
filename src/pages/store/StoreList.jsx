@@ -57,20 +57,7 @@ const StoreList = () => {
                     <div className="col-12">
                
                       <nav aria-label="breadcrumb">
-                        {/* <ol className="breadcrumb mb-0"> */}
-                          {/* <li className="breadcrumb-item"> */}
-                            {/* <a href="#!">Home</a> */}
-                          {/* </li> */}
-                          {/* <li className="breadcrumb-item"> */}
-                            {/* <a href="#!">Stores</a> */}
-                          {/* </li> */}
-                          {/* <li
-                            className="breadcrumb-item active"
-                            aria-current="page"
-                          >
-                            Store List
-                          </li> */}
-                        {/* </ol> */}
+             
                       </nav>
                     </div>
                   </div>

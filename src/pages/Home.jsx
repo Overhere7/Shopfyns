@@ -34,7 +34,6 @@ import googleplay from "../images/googleplay-btn.svg";
 import grocerybanner2 from "../images/grocery-banner-2.jpg";
 import grocerybanner from "../images/grocery-banner.png";
 import instantfood from "../images/instant-food.png";
-import iphone from "../images/iphone-2.png";
 import map from "../images/map.png";
 import package1 from "../images/package.svg";
 import petcare from "../images/pet-care.png";
@@ -495,7 +494,7 @@ const Home = () => {
                         <Zoom>
                           <div className="text-center mb-10">
                             {/* img */}
-                            <Link to="#">
+                            <Link to="/Category">
                               <img
                                 src={dairybreadeggs}
                                 alt="dairy-bread-eggs"
@@ -506,7 +505,7 @@ const Home = () => {
                             <div className="mt-4">
                               <h5 className="fs-6 mb-0">
                                 {" "}
-                                <Link to="#" className="text-inherit">
+                                <Link to="/Category" className="text-inherit">
                                   Dairy, Bread &amp; Eggs
                                 </Link>
                               </h5>
@@ -519,7 +518,7 @@ const Home = () => {
                         <Zoom>
                           <div className="text-center mb-10">
                             {/* img */}
-                            <Link to="#">
+                            <Link to="/Category">
                               <img
                                 src={fruitsvegetables}
                                 alt="fruits-vegetables"
@@ -530,7 +529,7 @@ const Home = () => {
                               {/* text */}
                               <h5 className="fs-6 mb-0">
                                 {" "}
-                                <Link to="#" className="text-inherit">
+                                <Link to="/Category" className="text-inherit">
                                   Fruits &amp; Vegetables
                                 </Link>
                               </h5>
@@ -543,7 +542,7 @@ const Home = () => {
                         <Zoom>
                           <div className="text-center mb-10">
                             {/* img */}
-                            <Link to="#">
+                            <Link to="/Category">
                               <img
                                 src={snackmunchies}
                                 alt="snack-munchies"
@@ -554,7 +553,7 @@ const Home = () => {
                             <div className="mt-4">
                               <h5 className="fs-6 mb-0">
                                 {" "}
-                                <Link to="#" className="text-inherit">
+                                <Link to="/Category" className="text-inherit">
                                   Snack &amp; Munchies
                                 </Link>
                               </h5>
@@ -567,7 +566,7 @@ const Home = () => {
                         <Zoom>
                           <div className="text-center mb-10">
                             {/* img */}
-                            <Link to="#">
+                            <Link to="/Category">
                               <img
                                 src={bakerybiscuits}
                                 alt="bakery-biscuits"
@@ -578,7 +577,7 @@ const Home = () => {
                             <div className="mt-4">
                               <h5 className="fs-6 mb-0">
                                 {" "}
-                                <Link to="#" className="text-inherit">
+                                <Link to="/Category" className="text-inherit">
                                   Bakery &amp; Biscuits
                                 </Link>
                               </h5>
@@ -591,7 +590,7 @@ const Home = () => {
                         <Zoom>
                           <div className="text-center mb-10">
                             {/* img */}
-                            <Link to="#">
+                            <Link to="/Category">
                               <img
                                 src={instantfood}
                                 alt="instant-food"
@@ -602,7 +601,7 @@ const Home = () => {
                             <div className="mt-4">
                               <h5 className="fs-6 mb-0">
                                 {" "}
-                                <Link to="#" className="text-inherit">
+                                <Link to="/Category" className="text-inherit">
                                   Instant Food
                                 </Link>
                               </h5>
@@ -615,7 +614,7 @@ const Home = () => {
                         <Zoom>
                           <div className="text-center mb-10">
                             {/* img */}
-                            <Link to="#">
+                            <Link to="/Category">
                               <img
                                 src={teacoffeedrinks}
                                 alt="tea-coffee-drinks"
@@ -625,7 +624,7 @@ const Home = () => {
                             {/* text */}
                             <div className="mt-4">
                               <h5 className="fs-6 mb-0">
-                                <Link to="#" className="text-inherit">
+                                <Link to="/Category" className="text-inherit">
                                   Tea, Coffee &amp; Drinks
                                 </Link>
                               </h5>
@@ -638,7 +637,7 @@ const Home = () => {
                         <Zoom>
                           <div className="text-center mb-10">
                             {/* img */}
-                            <Link to="#">
+                            <Link to="/Category">
                               <img
                                 src={colddrinksjuices}
                                 alt="cold-drinks-juices"
@@ -648,7 +647,7 @@ const Home = () => {
                             {/* text */}
                             <div className="mt-4">
                               <h5 className="fs-6 mb-0">
-                                <Link to="#" className="text-inherit">
+                                <Link to="/Category" className="text-inherit">
                                   Cold Drinks &amp; Juices
                                 </Link>
                               </h5>
@@ -661,7 +660,7 @@ const Home = () => {
                         <Zoom>
                           <div className="text-center mb-10">
                             {/* img */}
-                            <Link to="#">
+                            <Link to="/Category">
                               <img
                                 src={chickenmeatfish}
                                 alt="chicken-meat-fish"
@@ -671,7 +670,7 @@ const Home = () => {
                             {/* text */}
                             <div className="mt-4">
                               <h5 className="fs-6 mb-0">
-                                <Link to="#" className="text-inherit">
+                                <Link to="/Category" className="text-inherit">
                                   Chicken, Meat &amp; Fish
                                 </Link>
                               </h5>
@@ -685,7 +684,7 @@ const Home = () => {
                         <Zoom>
                           <div className="text-center mb-10">
                             {/* img */}
-                            <Link to="#">
+                            <Link to="/Category">
                               <img
                                 src={babycare}
                                 alt="baby-care"
@@ -709,7 +708,7 @@ const Home = () => {
                         <Zoom>
                           <div className="text-center mb-10">
                             {/* img */}
-                            <Link to="#">
+                            <Link to="/Category">
                               <img
                                 src={cleaningessentials}
                                 alt="cleaning-essentials"
@@ -720,7 +719,7 @@ const Home = () => {
                             <div className="mt-4">
                               <h5 className="fs-6 mb-0">
                                 {" "}
-                                <Link to="#" className="text-inherit">
+                                <Link to="/Category" className="text-inherit">
                                   Cleaning Essentials
                                 </Link>
                               </h5>
@@ -733,7 +732,7 @@ const Home = () => {
                         <Zoom>
                           <div className="text-center mb-10">
                             {/* img */}
-                            <Link to="#">
+                            <Link to="/Category">
                               <img
                                 src={petcare}
                                 alt="pet-care"
@@ -757,7 +756,7 @@ const Home = () => {
                         <Zoom>
                           <div className="text-center mb-10">
                             {/* img */}
-                            <Link to="#">
+                            <Link to="/Category">
                               <img
                                 src={attaricedal}
                                 alt="atta-rice-dal"
